@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 150" fill="none">
+<defs>
+<linearGradient id="bg" x2="1" y2=".7"><stop stop-color="#fbe4d8"/><stop offset="1" stop-color="#f9e1dc"/></linearGradient>
+<linearGradient id="arch" x2=".1" y2="1"><stop stop-color="#f5bdab"/><stop offset="1" stop-color="#f6cfbb"/></linearGradient>
+<linearGradient id="skin" x2=".7" y2="1"><stop stop-color="#d79775"/><stop offset="1" stop-color="#c87f66"/></linearGradient>
+<linearGradient id="top" x2=".4" y2="1"><stop stop-color="#cd7980"/><stop offset="1" stop-color="#b45d6d"/></linearGradient>
+<linearGradient id="leg" x2=".14" y2="1"><stop stop-color="#aa6370"/><stop offset="1" stop-color="#91576b"/></linearGradient>
+<pattern id="paper" width="8" height="10" patternUnits="userSpaceOnUse"><circle cx="2" cy="3" r=".42" fill="#7e4850" opacity=".28"/><circle cx="6" cy="8" r=".55" fill="#fff9df" opacity=".65"/></pattern>
+<g id="stem"><path d="M0 0C-3-18-2-38 3-57" stroke="#b98979" stroke-width="1.25" stroke-linecap="round"/><g fill="#ca9e88"><path d="M-1-10C-12-12-17-18-16-26-7-24-2-18-1-10Z"/><path d="M0-21C6-22 12-28 13-36 5-35 1-29 0-21Z"/><path d="M0-33C-9-36-13-42-12-48-3-45 0-40 0-33Z"/><path d="M2-43C9-46 11-52 11-57 5-55 3-50 2-43Z"/><path d="M3-56C-1-61 0-66 4-71 7-65 7-60 3-56Z"/></g></g>
+</defs>
+<path fill="url(#bg)" d="M0 0h340v150H0z"/>
+<path d="M84 150V97a86 86 0 0 1 172 0v53" fill="url(#arch)"/>
+<path d="M75 149V96a95 95 0 0 1 190 0v54M69 149V96" stroke="#dba997" opacity=".65"/>
+<circle cx="204" cy="44" r="13" fill="#fbd6ad" opacity=".88"/>
+<path d="M0 131c63-8 101 11 170 9 82-3 112-15 170-10v20H0z" fill="#ebc7b6"/>
+<g opacity=".88"><use href="#stem" transform="translate(75 138) rotate(-25) scale(.81)"/><use href="#stem" transform="translate(69 139) rotate(-58) scale(.57)"/><use href="#stem" transform="translate(264 138) rotate(25) scale(.84)"/><use href="#stem" transform="translate(269 138) rotate(58) scale(.57)"/></g>
+<ellipse cx="170" cy="140" rx="76" ry="5" fill="#c59191" opacity=".38"/>
+<path d="M100 137c16-6 118-7 139 0 6 2-39 5-68 5-37 0-80-3-71-5Z" fill="#cb9a9e"/>
+<!-- A seated figure; the palms lie gently above each knee. -->
+<path d="M149 60c2-7 6-10 13-12 10-3 20-1 26 4 4 3 6 7 8 13l11 30 13 9-4 6-18-10c-2-1-4-4-5-7l-10-23-26 1-11 25q-1 3-5 5l-17 9-3-7 14-9 14-34Z" fill="url(#skin)"/>
+<path d="M159 105c8 1 16 1 25-1l14 13-13 11-28 1-18-12z" fill="url(#leg)"/>
+<path d="M171 112c-13-1-29-8-40-8-12-1-20 5-20 12 1 13 25 19 56 18l29-7-4-7-21-8Z" fill="#ac6a79"/>
+<path d="M172 113c21-2 34-11 44-8 9 2 14 8 12 16-3 10-29 18-62 16l-18-4 3-8 21-12Z" fill="url(#leg)"/>
+<path d="M215 112c-12 3-18 8-39 13" stroke="#be8090" stroke-width="1.4" stroke-linecap="round"/>
+<path d="M120 116c11 4 21 8 34 10" stroke="#c08794" stroke-width="1.4" stroke-linecap="round"/>
+<path d="M149 125c5 2 8 2 13 1 6-1 12-5 15-4 2 0 2 2 1 3l-8 6c-5 3-11 3-20 1-4-1-4-6-1-7Z" fill="url(#skin)"/>
+<path d="m187 125 6 1c4 1 7 3 6 5 0 2-4 2-8 1l-11-2z" fill="#ce8c72"/>
+<path d="m159 51 5-3 9 8 8-7 5 2c-1 9 1 15 4 19 0 6-5 12-7 16-1 5 1 11 3 17-10 4-21 4-32 0 3-9 5-15 3-20-1-4-5-11-5-15 4-4 7-10 7-17Z" fill="url(#top)"/>
+<path d="M161 51c0 9 7 13 12 12 6 0 10-5 12-11M156 98c8 3 20 3 28-1" stroke="#e09d9f" stroke-width="1.8" stroke-linecap="round"/>
+<path d="M165 39c2 6 1 10-3 12 2 6 7 9 11 8 4-1 8-5 9-8-5-1-7-6-6-12Z" fill="url(#skin)"/>
+<path d="M167 45q4 4 10 1l-1-5h-9z" fill="#b77461"/>
+<path d="M157 30c-2-9 3-17 12-19 9-3 18 2 20 10s-2 18-7 21l-18 1c-4-3-6-8-7-13Z" fill="#674345"/>
+<path d="M178 15c-5-2-5-8-1-11 4-3 11-2 14 2 4 6-1 12-6 13Z" fill="#654044"/>
+<path d="M176 13c5 1 8 3 10 6" stroke="#d99992" stroke-width="2.2"/>
+<path d="M161 29c2-5 6-6 12-12 4 7 9 8 11 11l-1 7c-1 6-5 12-11 12s-10-5-11-12l-1-1c-2 0-3-4-2-5q1-2 3 0Z" fill="url(#skin)"/>
+<path d="m166 32 3 1 2-1m5 0 2 1 3-1" stroke="#74484a" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="m173 34-.6 3 1.7.4m-3 3.1q2 1.2 4 .1" stroke="#a7655e" stroke-width=".9" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="161" cy="35.7" r="1.15" fill="#efd29c"/>
+<path d="m123 102-6 2c-2 0-3 1-3 3 1 1 3 1 5 0l3-1c-2 4-6 5-11 5-1 0-2 2 0 3 5 2 13 0 17-4l1-3zM217 102l6 2c2 0 3 1 3 3-1 1-3 1-5 0l-3-1c2 4 6 5 11 5 1 0 2 2 0 3-5 2-13 0-17-4l-1-3z" fill="url(#skin)"/>
+<path fill="url(#paper)" opacity=".55" d="M0 0h340v150H0z"/>
+</svg>

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 150" fill="none">
+<defs>
+ <radialGradient id="bg" cx=".48" cy=".35" r=".9"><stop stop-color="#fbe8eb"/><stop offset="1" stop-color="#f2d2dc"/></radialGradient>
+ <linearGradient id="bottle" x2=".9" y2=".83"><stop stop-color="#eeb2bc"/><stop offset=".45" stop-color="#e6a2b0"/><stop offset="1" stop-color="#c98199"/></linearGradient>
+ <linearGradient id="rim" x2=".9" y2="1"><stop stop-color="#f8c3c8"/><stop offset="1" stop-color="#d68ca0"/></linearGradient>
+ <linearGradient id="heart" x2=".7" y2="1"><stop stop-color="#f3b3bc"/><stop offset="1" stop-color="#dc91a5"/></linearGradient>
+ <pattern id="paper" width="13" height="11" patternUnits="userSpaceOnUse"><circle cx="3" cy="1" r=".48" fill="#a7667c" opacity=".26"/><circle cx="9" cy="7" r=".55" fill="#fff4ec" opacity=".6"/></pattern>
+ <filter id="shadow" x="-40%" y="-50%" width="180%" height="220%"><feGaussianBlur stdDeviation="3.1"/></filter>
+ <path id="body" d="M-14-49v9c0 6-5 8-12 11-7 3-10 10-10 18l1 51c0 10 5 14 15 15h37c10 0 16-4 16-13l2-53c0-9-3-14-11-18-8-3-12-5-12-11v-9Z"/>
+ <g id="flower"><g fill="#fff5e5" stroke="#e7c5be" stroke-width=".55"><ellipse cy="-6" rx="2.5" ry="5"/><ellipse cy="-6" rx="2.5" ry="5" transform="rotate(45)"/><ellipse cy="-6" rx="2.5" ry="5" transform="rotate(90)"/><ellipse cy="-6" rx="2.5" ry="5" transform="rotate(135)"/><ellipse cy="-6" rx="2.5" ry="5" transform="rotate(180)"/><ellipse cy="-6" rx="2.5" ry="5" transform="rotate(225)"/><ellipse cy="-6" rx="2.5" ry="5" transform="rotate(270)"/><ellipse cy="-6" rx="2.5" ry="5" transform="rotate(315)"/></g><circle r="3.4" fill="#e6b573"/><circle cx="-.6" cy="-.7" r="1.3" fill="#f3ce91"/></g>
+ <path id="spark" d="M0-5c.6 3.2 1.8 4.3 4 5-2.5.8-3.4 2.1-4 5-.6-3-1.6-4.2-4-5 2.4-.8 3.4-2 4-5Z"/>
+</defs>
+<path d="M0 0h340v150H0z" fill="url(#bg)"/>
+<ellipse cx="171" cy="135" rx="72" ry="6" fill="#c98f9e" opacity=".21" filter="url(#shadow)"/>
+<g transform="rotate(-14 213 97)">
+ <path d="M205 140c14-27 22-55 20-93m-10 65c15-13 22-27 24-40m-18 20c-8-9-12-17-14-30m15 17c9-11 12-21 13-31" stroke="#9caa92" stroke-width="1.6" stroke-linecap="round"/>
+ <g fill="#acb59e"><path d="M219 100c4-9 10-13 16-13-1 6-5 11-16 13Z"/><path d="M223 76c-6-4-9-9-8-15 6 4 8 9 8 15Z"/><path d="M212 122c6-10 13-14 20-14-3 7-9 12-20 14Z"/></g>
+ <use href="#flower" transform="translate(225 46) scale(1.06)"/><use href="#flower" transform="translate(239 71) scale(.77)"/><use href="#flower" transform="translate(207 61) scale(.68)"/><use href="#flower" transform="translate(235 47) scale(.53)"/>
+</g>
+<g transform="translate(159 79) rotate(-13)">
+ <use href="#body" x="2" y="3.5" fill="#b77a8b" opacity=".43" filter="url(#shadow)"/>
+ <rect x="-10" y="-60" width="18" height="15" rx="4" fill="#ce8d9a" stroke="#bf8291" stroke-width="1"/>
+ <path d="M-7-58v7m4-8v7m4-7v7m4-6v7" stroke="#edb4bc" stroke-width="1.2" stroke-linecap="round"/>
+ <use href="#body" fill="url(#bottle)" stroke="#c48194" stroke-width="1.45" stroke-linejoin="round"/>
+ <use href="#body" fill="url(#paper)" opacity=".65"/>
+ <path d="M-11-40c1 8-5 11-13 15-6 3-8 8-8 15l1 49c0 8 3 12 11 13h37c9 0 13-4 13-11l1-51c0-8-3-13-9-16-9-4-15-8-14-14" stroke="#efb4c0" stroke-width="1.4"/>
+ <path d="M-17-54q17-2 32 0l-1 9q-15-1-29 0Z" fill="url(#rim)" stroke="#c88597" stroke-width="1.3" stroke-linejoin="round"/>
+ <path d="M-14-52q14-1 26 0" stroke="#f9d1d2" stroke-width="1.4" stroke-linecap="round"/>
+ <g fill="none" stroke-linecap="round" stroke-width="1.5">
+ <path id="ribs" d="M-22-14v50m7-56v21m0 18v19m7-62v19m0 31v12m8-64v18m0 37v9m8-64v19m0 32v13m7-60v20m0 20v17m7-51v48" stroke="#c7869a"/>
+ <use href="#ribs" x="1.45" stroke="#f4bdc6" opacity=".85"/>
+ </g>
+ <path d="M0 21c-3-3-13-9-13-16 0-6 8-8 13-2 4-6 12-5 13 1 2 7-8 14-13 17Z" fill="url(#heart)" stroke="#c68498" stroke-width="1.4"/>
+ <path d="M-10 4c1-3 4-4 7-2" stroke="#f9c7cd" stroke-width="1.4" stroke-linecap="round"/>
+</g>
+<g fill="#ce92a3" opacity=".75"><use href="#spark" transform="translate(104 62) scale(.8)"/><use href="#spark" transform="translate(251 96) scale(.75)"/><circle cx="108" cy="50" r="1.2"/></g>
+<g fill="#fff3e8"><use href="#spark" transform="translate(103 93)"/><use href="#spark" transform="translate(208 25) scale(.65)"/><circle cx="116" cy="104" r="1.2"/></g>
+<path fill="url(#paper)" opacity=".52" d="M0 0h340v150H0z"/>
+</svg>
