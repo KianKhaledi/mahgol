@@ -18,3 +18,10 @@
 .install-btn[hidden] { display: none; }
 #install-help p { margin: 12px 0; }
 @media print { #install-help, .install-btn { display: none !important; } }
+
+.update-area { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; justify-content: center; width: 92%; margin: 0 auto 22px; color: #816276; font-size: 12px; }
+.update-area [hidden] { display: none; }
+#app-status { max-width: 480px; }
+.hero p { max-width: 440px; }
+details summary { cursor: pointer; color: #994a71; }
+@media print { .update-area { display: none !important; } }

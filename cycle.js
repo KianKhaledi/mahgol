@@ -10,27 +10,54 @@ const names=['فروردین','اردیبهشت','خرداد','تیر','مردا
 const jStarts=new Map();
 function jMonth(y,m){const k=y+'-'+m;if(jStarts.has(k))return jStarts.get(k);let n=Math.floor(Date.UTC(y+621,2,18)/DAY);while(dateParts(n).year<y)n++;for(let i=1;i<m;i++)n=nextMonth(n);jStarts.set(k,n);return n}
 const avg=a=>Math.round(a.reduce((s,n)=>s+n,0)/a.length);
-function model(periods){
- const sorted=[...periods].sort((a,b)=>a.start-b.start), recent=sorted.slice(-7);
- const gaps=recent.slice(1).map((p,i)=>p.start-recent[i].start);
- const spans=recent.filter(p=>p.end!=null).map(p=>p.end-p.start+1);
- if(!gaps.length||!spans.length)return null;
- return {cycle:avg(gaps),duration:avg(spans),low:Math.min(...gaps),high:Math.max(...gaps),latest:recent.at(-1).start,count:gaps.length};
+function model(periods) {
+  const recent = [...periods].sort((a, b) => a.start - b.start).slice(-7);
+  const intervals = recent.slice(1).map((period, index) => ({
+    start: recent[index].start,
+    end: period.start,
+    days: period.start - recent[index].start
+  }));
+  const gaps = intervals.map(interval => interval.days);
+  const spans = recent.filter(period => period.end != null)
+    .map(period => period.end - period.start + 1);
+  if (!gaps.length || !spans.length) return null;
+  return {
+    cycle: avg(gaps),
+    duration: avg(spans),
+    low: Math.min(...gaps),
+    high: Math.max(...gaps),
+    latest: recent.at(-1).start,
+    count: gaps.length,
+    intervals
+  };
 }
-function phase(n,periods,m,pmsDays){
- const known=periods.find(p=>n>=p.start&&n<=(p.end??p.start));
- if(known)return {type:'bleed',label:'خون‌ریزی ثبت‌شده',actual:true};
- if(!m)return {type:'',label:'بدون پیش‌بینی'};
- const start=m.latest, distance=n-start;
- if(distance<0)return {type:'',label:'روز بدون ثبت'};
- if(n>start+3*m.cycle+m.duration)return {type:'',label:'بیرون از بازهٔ پیش‌بینی'};
- if(today()>start+m.high && n>=start+m.high)return {type:'',label:'در انتظار ثبت دورهٔ بعدی'};
- const step=Math.floor(distance/m.cycle), offset=distance%m.cycle, last=periods.find(p=>p.start===start);
- if((step>0||last.end==null)&&offset<m.duration)return {type:'bleed',label:'خون‌ریزی احتمالی'};
- const until=m.cycle-offset;
- if(until>=12&&until<=16)return {type:'ovu',label:'بازهٔ احتمالی تخمک‌گذاری'};
- if(until<=pmsDays)return {type:'pms',label:'روزهای احتمالی پی‌ام‌اس'};
- return {type:'',label:'روز دیگری از چرخه'};
+
+function phase(n, periods, m, pmsDays, referenceDay = today()) {
+  const known = periods.find(period =>
+    n >= period.start && n <= (period.end ?? period.start));
+  if (known) return { type: 'bleed', label: 'خون‌ریزی ثبت‌شده', actual: true };
+  if (!m) return { type: '', label: 'بدون پیش‌بینی' };
+  if (n < m.latest) return { type: '', label: 'روز بدون ثبت' };
+
+  const last = periods.find(period => period.start === m.latest);
+  if (last.end == null && n < m.latest + m.duration) {
+    return { type: 'bleed', label: 'ادامهٔ احتمالی خون‌ریزی' };
+  }
+
+  const next = expected(m);
+  // A predicted start never becomes the start of a newly inferred cycle.
+  if (n >= next) {
+    if (n < next + m.duration && referenceDay < next + m.duration) {
+      return { type: 'bleed', label: 'خون‌ریزی احتمالی؛ شروع واقعی هنوز ثبت نشده' };
+    }
+    return { type: '', label: 'در انتظار ثبت شروع واقعی دورهٔ بعدی' };
+  }
+  const until = next - n;
+  if (until >= 12 && until <= 16) {
+    return { type: 'ovu', label: 'بازهٔ احتمالی تخمک‌گذاری' };
+  }
+  if (until <= pmsDays) return { type: 'pms', label: 'روزهای احتمالی پی‌ام‌اس' };
+  return { type: '', label: 'روز دیگری از چرخه' };
 }
 function expected(m){return m?m.latest+m.cycle:null}
 function validatePeriod(list,start,end,skip){
